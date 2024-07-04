@@ -1,38 +1,93 @@
-.App {
+.footer {
+  background-color: #333;
+  font-family: "Poppins" , sans-serif;
+  color: #fff;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: normal;
+}
+/* Base styles for the navbar */
+.navbar {
+  background-color: #333; /* Matching footer background color */
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px gray;
+  -webkit-box-shadow: 0 8px 6px -6px gray;
+  border-bottom: solid gray !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styles for the brand link */
+.navbar-brand {
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 3px;
+  color: #fff; /* Matching footer text color */
+  margin-right: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-brand:hover {
+  color: #ccc;
+}
+
+/* Remove default list styles */
+.navbar-nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  align-items: right;
+  margin-left: auto;
+  list-style: none; /* Remove dots */
+  padding-left: 0; /* Remove padding */
 }
 
-.App-link {
-  color: #61dafb;
+.nav-item {
+  list-style: none; /* Remove dots */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Styles for the nav links */
+.nav-link {
+  color: #ddd; /* Matching footer text color */
+  margin: 0 1rem;
+  transition: color 0.3s;
+  font-weight: 300 !important;
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-item.active .nav-link {
+  border-bottom: 2px solid black;
+}
+
+/* Styles for the navbar toggler */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Custom styles for the collapse navbar */
+.collapse.navbar-collapse {
+  justify-content: flex-end;
+}
+
+@media (max-width: 992px) {
+  .navbar-nav {
+      flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar .nav-link {
+      margin: 0.5rem 0;
   }
 }

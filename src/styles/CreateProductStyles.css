@@ -1,0 +1,27 @@
+.create-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  }
+  
+  .create-product-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .create-product-form button {
+    width: 100px;
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-product-form button:hover {
+    background-color: #45a049;
+  }
+  
