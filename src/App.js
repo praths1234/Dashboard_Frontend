@@ -21,6 +21,10 @@ import Customizer from './pages/user/Customizer';
 import UpdatedProduct from './pages/user/UpdatedProduct';
 import ShippingAddress from './pages/user/ShippingAddress';
 import PaymentForm from './pages/user/PaymentForm';
+import OrdersByDateRange from './pages/admin/OrdersByDate';
+import OrdersByStatus from './pages/admin/OrdersByStatus';
+import About from './pages/About';
+import Help from './pages/Help';
 function App() {
   return (
     <>
@@ -28,6 +32,8 @@ function App() {
      <Route path='/' element={<HomePage/>} />
      <Route path='/signup' element={<Signup/>}/>
      <Route path='/login' element={<Login/>}/>
+     <Route path='/about' element={<About/>}/>
+     <Route path='/help' element={<Help/>}/>
      <Route path='/forgot-password' element={<ForgotPassword/>}/>
      <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
@@ -47,6 +53,8 @@ function App() {
           <Route path="admin/users" element={<Users />} />
           <Route path="admin/orders" element={<Orders />} />
           <Route path="admin/payments" element={<Payments />} />
+          <Route path='admin/orders-by-date' element={<OrdersByDateRange/>} />
+          <Route path='admin/orders-by-status' element={<OrdersByStatus/>} />
         </Route>
     </Routes>
     

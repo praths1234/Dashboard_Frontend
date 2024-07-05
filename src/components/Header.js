@@ -42,16 +42,6 @@ const Header = () => {
                                 Home
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/addProduct" className="nav-link">
-                                Add Products
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/my-products" className="nav-link">
-                                My Products
-                            </NavLink>
-                        </li>
                         {!auth.user ? (
                             <>
                                 <li className="nav-item">
@@ -101,13 +91,13 @@ const Header = () => {
                             </>
                         )}
                         <li className="nav-item">
-                            <NavLink to="/order" className="nav-link">
-                                Order
+                            <NavLink to="/about" className="nav-link">
+                                About
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/wallet" className="nav-link">
-                                Wallet
+                            <NavLink to="/help" className="nav-link">
+                                Help
                             </NavLink>
                         </li>
                     </ul>

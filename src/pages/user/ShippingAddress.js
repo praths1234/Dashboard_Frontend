@@ -40,11 +40,11 @@ const ShippingAddress = () => {
   
       if (designId) {
           // Fetch product price using productId and designId
-          const productResponse = await axios.get(`http://localhost:5000/designs/${designId}`);
+          const productResponse = await axios.get(`http://localhost:5000/design/${designId}`);
           productPrice = productResponse.data.price;
       } else {
           // Fetch product price using only productId
-          const productResponse = await axios.get(`http://localhost:5000/products/${productId}`);
+          const productResponse = await axios.get(`http://localhost:5000/product/${productId}`);
           productPrice = productResponse.data.price;
       } 
       if (walletBalance < productPrice) {

@@ -13,6 +13,18 @@ function AdminMenu() {
             Orders
           </NavLink>
           <NavLink
+            to="/dashboard/admin/orders-by-date"
+            className="list-group-item list-group-item-action"
+          >
+            Orders by Date Range
+          </NavLink>
+          <NavLink
+            to="/dashboard/admin/orders-by-status"
+            className="list-group-item list-group-item-action"
+          >
+            Orders by Status
+          </NavLink>
+          <NavLink
             to="/dashboard/admin/create-product"
             className="list-group-item list-group-item-action"
           >
