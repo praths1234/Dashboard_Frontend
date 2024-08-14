@@ -15,7 +15,7 @@ const Payments = () => {
     useEffect(() => {
         const fetchPayments = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/submitPaymentForm');
+                const response = await axios.get('process.env.REACT_URI/submitPaymentForm');
                 setPayments(response.data);
             } catch (error) {
                 console.error('Error fetching payments:', error);
@@ -35,7 +35,7 @@ const Payments = () => {
 
     const handleUpdateBalance = async (amount) => {
         try {
-            const response = await axios.post('http://localhost:5000/submitPaymentForm/update-wallet-balance', {
+            const response = await axios.post('process.env.REACT_URI/submitPaymentForm/update-wallet-balance', {
                 email: currentEmail,
                 amount,
                 paymentId: currentPaymentId

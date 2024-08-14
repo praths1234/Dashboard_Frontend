@@ -21,7 +21,7 @@ const PaymentForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/submitPaymentForm', formData);
+            const response = await axios.post('process.env.REACT_URI/submitPaymentForm', formData);
             alert(response.data.message);
             alert('Your wallet balance will be updated shortly'); // Alert success message
             // Optionally, clear the form after successful submission

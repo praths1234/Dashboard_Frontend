@@ -10,7 +10,7 @@ const OrdersByDateRange = () => {
   
   const fetchOrdersByDateRange = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/orders/by-date-range", {
+      const response = await axios.post("process.env.REACT_URI/orders/by-date-range", {
         startDate,
         endDate
       });
@@ -22,7 +22,7 @@ const OrdersByDateRange = () => {
 
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-        await axios.patch(`http://localhost:5000/orders/updateStatus/${orderId}`, { status: newStatus });
+        await axios.patch(`process.env.REACT_URI/orders/updateStatus/${orderId}`, { status: newStatus });
         setOrders((prevOrders) =>
             prevOrders.map((order) =>
                 order._id === orderId ? { ...order, status: newStatus } : order

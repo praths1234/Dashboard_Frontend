@@ -1,0 +1,14 @@
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #07dbfc !important; 
+    transform: scale(1.05);
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import Layout from '../../components/Layout';
 import UserMenu from '../../components/UserMenu';
 import "../../styles/shippingAddressStyle.css";
@@ -15,62 +15,68 @@ const ShippingAddress = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const { productId, designId } = useParams();
+  const location = useLocation();
+  const { quantity } = location.state || { quantity: 1 }; // Default quantity to 1 if not provided
   const userId = JSON.parse(localStorage.getItem('auth')).user._id;
 
   useEffect(() => {
     // Fetch the wallet balance using the user ID
     const fetchWalletBalance = async () => {
-        try {
-            const response = await axios.get(`http://localhost:5000/wallet/${userId}`);
-            console.log(response.data);
-            setWalletBalance(response.data.walletBalance);
-            console.log(walletBalance);
-        } catch (error) {
-            console.error('Error fetching wallet balance:', error);
-        }
+      try {
+        const response = await axios.get(`process.env.REACT_URI/wallet/${userId}`);
+        console.log(response.data);
+        setWalletBalance(response.data.walletBalance);
+        console.log(walletBalance);
+      } catch (error) {
+        console.error('Error fetching wallet balance:', error);
+      }
     };
 
     fetchWalletBalance();
-}, [userId , walletBalance]);
+  }, [userId, walletBalance]);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const shippingAddress = `${flatNumber}, ${locality}, ${landmark}, ${city}, ${pinCode}`;
     try {
       let productPrice;
-  
+
       if (designId) {
-          // Fetch product price using productId and designId
-          const productResponse = await axios.get(`http://localhost:5000/design/${designId}`);
-          productPrice = productResponse.data.price;
+        // Fetch product price using productId and designId
+        const productResponse = await axios.get(`process.env.REACT_URI/design/${designId}`);
+        productPrice = productResponse.data.price;
       } else {
-          // Fetch product price using only productId
-          const productResponse = await axios.get(`http://localhost:5000/product/${productId}`);
-          productPrice = productResponse.data.price;
-      } 
-      if (walletBalance < productPrice) {
+        // Fetch product price using only productId
+        const productResponse = await axios.get(`process.env.REACT_URI/product/${productId}`);
+        productPrice = productResponse.data.price;
+      }
+
+      const totalPrice = productPrice * quantity;
+
+      if (walletBalance < totalPrice) {
         // Show pop-up or alert to recharge wallet
         alert('Insufficient balance. Please recharge your wallet.');
-        navigate('/wallet');
-    }
-    else{
-      const updatedBalance = walletBalance - productPrice;
+        navigate('/dashboard/user/wallet');
+      } else {
+        const updatedBalance = walletBalance - totalPrice;
 
-      // Update wallet balance in the database
-      await axios.patch(`http://localhost:5000/wallet/${userId}`, { balance: updatedBalance });
-      await axios.post('http://localhost:5000/orders', { userId, productId, designId, shippingAddress });
+        // Update wallet balance in the database
+        await axios.patch(`process.env.REACT_URI/wallet/${userId}`, { balance: updatedBalance });
+        await axios.post('process.env.REACT_URI/orders', { userId, productId, designId, shippingAddress, quantity });
 
         // Update local wallet balance state
         setWalletBalance(updatedBalance);
 
         // Show success message
         alert('Order placed successfully!');
-        navigate('/');
+        navigate('/dashboard/user');
+      }
+    } catch (error) {
+      console.error('Error placing order:', error);
+      setError('Error placing order. Please try again.');
     }
-} catch (error) {
-    console.error('Error placing order:', error);
-    setError('Error placing order. Please try again.');
-}
   };
+
   return (
     <Layout title={"Dashboard - Shipping Address"}>
       <div className="container-fluid m-3 p-3">

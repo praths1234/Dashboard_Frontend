@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Layout from '../../components/Layout';
 import UserMenu from '../../components/UserMenu';
+import toast from "react-hot-toast";
 const Order = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,7 +12,7 @@ const Order = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/orders/user/${userId}`);
+        const response = await axios.get(`process.env.REACT_URI/orders/user/${userId}`);
         console.log('Fetched Orders:', response.data);  // Log the fetched orders
         setOrders(response.data);
       } catch (error) {
@@ -27,8 +28,9 @@ const Order = () => {
 
   const handleCancelOrder = async (orderId) => {
     try {
-      await axios.patch(`http://localhost:5000/orders/cancel/${orderId}`);
+      const res = await axios.patch(`process.env.REACT_URI/orders/cancel/${orderId}`);
       setOrders(orders.filter(order => order._id !== orderId));
+      toast.success(res.message , { duration: 50000 })
     } catch (error) {
       console.error('Error cancelling order:', error);
       setError('Error cancelling order. Please try again.');
@@ -65,10 +67,12 @@ const Order = () => {
                 <h3>Product ID: {order.productDetails._id}</h3>
                 <p>Status: {order.status}</p>
                 <p>Order Date: {new Date(order.orderDate).toLocaleDateString()}</p>
+                <p>Quantity: {order.quantity}</p>
                 <img 
                   src={order.designId ? order.productDetails.customizedImage : order.productDetails.imageUrl} 
                   alt="Product" 
                 />
+                
                 <button onClick={() => handleCancelOrder(order._id)}>Cancel Order</button>
               </li>
             ))}

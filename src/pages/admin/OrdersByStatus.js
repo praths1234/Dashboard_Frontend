@@ -11,7 +11,7 @@ const OrdersByStatus = () => {
 
   const fetchOrdersByStatus = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/orders/by-status/${status}`);
+      const response = await axios.get(`process.env.REACT_URI/orders/by-status/${status}`);
       setOrders(response.data);
     } catch (error) {
       console.error("Error fetching orders:", error);

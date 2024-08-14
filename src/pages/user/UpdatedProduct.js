@@ -7,13 +7,14 @@ import UserMenu from '../../components/UserMenu';
 const UpdatedProduct = () => {
   const { designId } = useParams();
   const [design, setDesign] = useState(null);
+  const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
 
   useEffect(() => {
     console.log('Design ID:', designId); // Log designId to ensure it is not undefined
     const fetchDesign = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/design/${designId}`);
+        const response = await axios.get(`process.env.REACT_URI/design/${designId}`);
         console.log('Design data:', response.data);
         setDesign(response.data);
       } catch (error) {
@@ -27,12 +28,16 @@ const UpdatedProduct = () => {
   }, [designId]);
 
   const handleOrder = (productId, designId) => {
-    navigate(`/dashboard/user/shipping/${productId}/${designId}`);
+    if (quantity <= 0) {
+      alert('Quantity must be greater than zero.');
+      return;
+    }
+    navigate(`/dashboard/user/shipping/${productId}/${designId}`, { state: { quantity } });
   };
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/design/${designId}`);
+      await axios.delete(`process.env.REACT_URI/design/${designId}`);
       console.log('Design deleted:', designId);
       alert('Design deleted successfully!');
       navigate('/dashboard/user/products');
@@ -69,6 +74,17 @@ const UpdatedProduct = () => {
                 {design.customizedImage && (
                   <img src={design.customizedImage} alt="Customized Product" />
                 )}
+                <div>
+                          <label>
+                            Quantity:
+                            <input
+                              type="number"
+                              value={quantity}
+                              onChange={(e) => setQuantity(parseInt(e.target.value))}
+                              min="1"
+                            />
+                          </label>
+                        </div>
               </div>
               <button onClick={() => handleOrder(design.productId, design._id)}>Order Now</button>
               <button onClick={handleDelete} style={{ marginLeft: '10px', color: 'red' }}>Delete Product</button>

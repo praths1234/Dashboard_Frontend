@@ -27,7 +27,7 @@ const CreateProduct = () => {
       sizes: formData.sizes.split(',').map(size => size.trim()),
       colors: formData.colors.split(',').map(color => color.trim()),
     };
-    axios.post('http://localhost:5000/product', data)
+    axios.post('process.env.REACT_URI/product', data)
       .then(response => {
         console.log('Product created:', response.data);
         alert("Product Created");

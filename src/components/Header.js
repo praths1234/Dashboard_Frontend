@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/auth";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Ensure Bootstrap JS is included
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
 
 const Header = () => {
     const [auth, setAuth] = useAuth();
@@ -14,15 +14,14 @@ const Header = () => {
             token: "",
         });
         localStorage.removeItem("auth");
-        toast.success("Logout Successfully" , { duration: 15000 });
-        //alert("Logged Out Successfully");
+        toast.success("Logout Successfully", { duration: 15000 });
     };
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link to="/" className="navbar-brand">
-                    FABURN POD
+                    <img src="/logo2.jpg" alt="POD Logo" style={{ height: '40px' }} />
                 </Link>
                 <button
                     className="navbar-toggler"
@@ -68,14 +67,14 @@ const Header = () => {
                                     </button>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li>
-                                        <NavLink
-                          to={`/dashboard/${
-                            auth?.user?.role === 1 ? "admin" : "user"
-                          }`}
-                          className="dropdown-item"
-                        >
-                            Dashboard
-                        </NavLink>
+                                            <NavLink
+                                                to={`/dashboard/${
+                                                    auth?.user?.role === 1 ? "admin" : "user"
+                                                }`}
+                                                className="dropdown-item"
+                                            >
+                                                Dashboard
+                                            </NavLink>
                                         </li>
                                         <li>
                                             <NavLink

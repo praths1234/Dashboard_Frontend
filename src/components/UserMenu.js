@@ -8,12 +8,6 @@ function UserMenu() {
           <h4>User Services
           </h4>
           <NavLink
-            to="/dashboard/user/order"
-            className="list-group-item list-group-item-action"
-          >
-            Orders
-          </NavLink>
-          <NavLink
             to="/dashboard/user/products"
             className="list-group-item list-group-item-action"
           >
@@ -24,6 +18,12 @@ function UserMenu() {
             className="list-group-item list-group-item-action"
           >
             My Products
+          </NavLink>
+          <NavLink
+            to="/dashboard/user/order"
+            className="list-group-item list-group-item-action"
+          >
+            Orders
           </NavLink>
           <NavLink
             to="/dashboard/user/wallet"

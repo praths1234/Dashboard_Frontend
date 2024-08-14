@@ -26,7 +26,7 @@ const Customizer = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/product/${id}`);
+        const response = await axios.get(`process.env.REACT_URI/product/${id}`);
         setProduct(response.data);
       } catch (error) {
         console.error(error);
@@ -91,7 +91,7 @@ const Customizer = () => {
     formData.append('price', product.price);
 
     try {
-      const response = await axios.post('http://localhost:5000/design', formData, {
+      const response = await axios.post('process.env.REACT_URI/design', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

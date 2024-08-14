@@ -12,7 +12,7 @@ const Orders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/orders');
+                const response = await axios.get('process.env.REACT_URI/orders');
                 setOrders(response.data);
             } catch (error) {
                 setError('Error fetching orders');
@@ -25,7 +25,7 @@ const Orders = () => {
 
     const handleStatusChange = async (orderId, newStatus) => {
         try {
-            await axios.patch(`http://localhost:5000/orders/updateStatus/${orderId}`, { status: newStatus });
+            await axios.patch(`process.env.REACT_URI/orders/updateStatus/${orderId}`, { status: newStatus });
             setOrders((prevOrders) =>
                 prevOrders.map((order) =>
                     order._id === orderId ? { ...order, status: newStatus } : order

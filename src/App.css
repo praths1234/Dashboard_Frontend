@@ -91,3 +91,8 @@
       margin: 0.5rem 0;
   }
 }
+.container-fluid {
+  color: #030303;
+  min-height: 10vh;
+  padding: 20px;
+}
