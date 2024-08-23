@@ -1,0 +1,85 @@
+
+  
+ 
+  
+  h3 {
+    margin-top: 0;
+  }
+  
+  /* Product Image */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-right: 0.5rem;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Create Design Button */
+  button.create-design {
+    background-color: #28a745;
+  }
+  
+  button.create-design:hover {
+    background-color: #218838;
+  }
+  
+  /* Delete Button */
+  button.delete {
+    background-color: #dc3545;
+  }
+  
+  button.delete:hover {
+    background-color: #c82333;
+  }
+  
+  /* Order Button */
+  button.order {
+    background-color: #17a2b8;
+  }
+  
+  button.order:hover {
+    background-color: #138496;
+  }
+  
+  /* Quantity Input */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  

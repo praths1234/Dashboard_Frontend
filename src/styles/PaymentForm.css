@@ -1,60 +1,56 @@
+/* Container for the form */
 .form-container {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Adjusted to spread appropriately */
-    margin: 0 auto;
-    padding: 30px; /* Increased padding for better spacing */
-    box-sizing: border-box;
-    margin-top: 20px; /* Added margin-top for vertical spacing */
-    background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
-    
-  }
-  .title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-  }
-  .form-container label {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #333;
-  }
-  .form-container input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  .form-container button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  .form-container button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  .row {
-    display: flex;
-    justify-content: center; /* Center the row content */
-  }
-  
-  .col-md-3 {
-    margin-bottom: 20px;
-  }
-  
-  .col-md-9 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+  background-color: #f9f9f9; /* Light gray background for the form area */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Padding inside the container */
+  max-width: 800px; /* Max width for better readability */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Title of the form */
+.title {
+  font-size: 1.5rem; /* Larger font size for the title */
+  font-weight: 600; /* Bold font */
+  margin-bottom: 20px; /* Space below the title */
+  color: #333; /* Dark color for the title */
+}
+
+/* Styling for form groups */
+.form-group {
+  margin-bottom: 15px; /* Space between form elements */
+}
+
+/* Styling for labels */
+.form-group label {
+  display: block; /* Labels should be block elements */
+  font-size: 1rem; /* Font size for labels */
+  margin-bottom: 5px; /* Space between label and input */
+  color: #555; /* Slightly lighter color for labels */
+}
+
+/* Styling for input fields */
+.form-group input {
+  width: 100%; /* Full width for inputs */
+  padding: 10px; /* Padding inside input fields */
+  border: 1px solid #ddd; /* Light border color */
+  border-radius: 4px; /* Rounded corners for inputs */
+  font-size: 1rem; /* Font size for inputs */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Styling for the submit button */
+.submit-button {
+  background-color: #007bff; /* Blue background for the button */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Padding inside the button */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Font size for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.submit-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

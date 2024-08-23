@@ -82,7 +82,7 @@ const OrdersByStatus = () => {
                                     alt="Product" 
                                     />
                                     
-                    <hr />
+                    
                   </li>
                 ))}
               </ul>

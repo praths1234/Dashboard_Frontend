@@ -1,0 +1,66 @@
+/* Navbar container */
+.navbar {
+  background-color: #333; /* Dark background for the navbar */
+  padding: 0.5rem 1rem;
+}
+
+/* Navbar brand logo */
+.navbar-brand img {
+  height: 40px; /* Ensures logo is of consistent height */
+}
+
+/* Navbar toggler button */
+.navbar-toggler {
+  border-color: transparent; /* Removes border from the toggler */
+}
+
+/* Navbar links */
+.nav-link {
+  color: #ffffff !important; /* White text color for links */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-link:hover {
+  color: #f8f9fa !important; /* Light color on hover */
+}
+
+/* Navbar dropdown */
+.nav-item.dropdown .dropdown-menu {
+  background-color: #343a40; /* Dark background for dropdown menu */
+  border: none; /* Removes default border */
+}
+
+.dropdown-item {
+  color: #ffffff; /* White text color for dropdown items */
+}
+
+.dropdown-item:hover {
+  background-color: #495057; /* Darker background on hover */
+  color: #ffffff; /* Ensures text remains white */
+}
+
+/* Navbar toggler icon */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M5 7h20M5 15h20M5 23h20'/%3E%3C/svg%3E");
+}
+
+/* Dropdown toggle button */
+.nav-link.dropdown-toggle {
+  color: #ffffff !important; /* White color for dropdown toggle button */
+  padding: 0.5rem 1rem; /* Adds padding around the text */
+}
+
+.nav-link.dropdown-toggle:hover {
+  color: #f8f9fa !important; /* Light color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    text-align: center; /* Center-aligns the menu items on small screens */
+  }
+
+  .nav-item {
+    margin-bottom: 0.5rem; /* Adds space between items on small screens */
+  }
+}

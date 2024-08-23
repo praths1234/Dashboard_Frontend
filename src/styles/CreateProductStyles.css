@@ -1,27 +1,54 @@
+
+/* Form styling */
 .create-product-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  background-color: #cde4fc; /* Light background for the form */
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form labels */
+.create-product-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Form inputs */
+.create-product-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Submit button */
+.create-product-form button {
+  background-color: #007bff; /* Primary button color */
+  color: #ffffff; /* White text color */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-product-form button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .create-product-form {
+    padding: 1rem;
   }
-  
-  .create-product-form label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
+
+  .create-product-form input,
   .create-product-form button {
-    width: 100px;
-    padding: 5px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    font-size: 0.875rem;
   }
-  
-  .create-product-form button:hover {
-    background-color: #45a049;
-  }
-  
+}

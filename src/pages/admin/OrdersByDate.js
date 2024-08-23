@@ -92,7 +92,7 @@ const OrdersByDateRange = () => {
                                     alt="Product" 
                                     />
                     
-                    <hr />
+                    
                   </li>
                 ))}
               </ul>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../../components/Layout';
 import UserMenu from '../../components/UserMenu';
-import "../../styles/product.css";
+import "../../styles/MyProduct.css";
 
 const MyProduct = () => {
   const [designs, setDesigns] = useState([]);
@@ -70,6 +70,7 @@ const MyProduct = () => {
           </div>
           <div className="col-md-9">
             <div>
+            
               <h2>My Customized Products</h2>
               <div>
                 {designs.length === 0 ? (
@@ -79,6 +80,7 @@ const MyProduct = () => {
                   </div>
                 ) : (
                   <ul>
+                    <button onClick={handleCreateDesign}>Create More Design</button>
                     {designs.map((design) => (
                       <li key={design._id}>
                         <h3>Product ID: {design.productId}</h3>

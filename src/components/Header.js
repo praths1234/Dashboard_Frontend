@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { useAuth } from "../context/auth";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
-
+import '../styles/Navbar.css'
 const Header = () => {
     const [auth, setAuth] = useAuth();
     const handleLogout = () => {
@@ -14,14 +14,14 @@ const Header = () => {
             token: "",
         });
         localStorage.removeItem("auth");
-        toast.success("Logout Successfully", { duration: 15000 });
+        toast.success("Logged out Successfully", { duration: 15000 });
     };
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link to="/" className="navbar-brand">
-                    <img src="/logo2.jpg" alt="POD Logo" style={{ height: '40px' }} />
+                    <img src="/logo2.png" alt="POD Logo" style={{ height: '40px' }} />
                 </Link>
                 <button
                     className="navbar-toggler"

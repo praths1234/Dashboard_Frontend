@@ -76,7 +76,7 @@ const Orders = () => {
                                     alt="Product" 
                                     />
                     
-                    <hr />
+                    
                   </li>
                 ))}
               </ul>
