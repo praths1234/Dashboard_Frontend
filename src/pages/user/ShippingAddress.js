@@ -23,7 +23,7 @@ const ShippingAddress = () => {
     // Fetch the wallet balance using the user ID
     const fetchWalletBalance = async () => {
       try {
-        const response = await axios.get(`process.env.REACT_URI/wallet/${userId}`);
+        const response = await axios.get(`${process.env.REACT_APP_URI}/wallet/${userId}`);
         console.log(response.data);
         setWalletBalance(response.data.walletBalance);
         console.log(walletBalance);
@@ -43,11 +43,11 @@ const ShippingAddress = () => {
 
       if (designId) {
         // Fetch product price using productId and designId
-        const productResponse = await axios.get(`process.env.REACT_URI/design/${designId}`);
+        const productResponse = await axios.get(`${process.env.REACT_APP_URI}/design/${designId}`);
         productPrice = productResponse.data.price;
       } else {
         // Fetch product price using only productId
-        const productResponse = await axios.get(`process.env.REACT_URI/product/${productId}`);
+        const productResponse = await axios.get(`${process.env.REACT_APP_URI}/product/${productId}`);
         productPrice = productResponse.data.price;
       }
 
@@ -61,8 +61,8 @@ const ShippingAddress = () => {
         const updatedBalance = walletBalance - totalPrice;
 
         // Update wallet balance in the database
-        await axios.patch(`process.env.REACT_URI/wallet/${userId}`, { balance: updatedBalance });
-        await axios.post('process.env.REACT_URI/orders', { userId, productId, designId, shippingAddress, quantity });
+        await axios.patch(`${process.env.REACT_APP_URI}/wallet/${userId}`, { balance: updatedBalance });
+        await axios.post(`${process.env.REACT_APP_URI}/orders`, { userId, productId, designId, shippingAddress, quantity });
 
         // Update local wallet balance state
         setWalletBalance(updatedBalance);

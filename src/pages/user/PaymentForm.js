@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import UserMenu from '../../components/UserMenu';
 import Layout from '../../components/Layout';
+import toast from "react-hot-toast";
+//import { duration } from 'html2canvas/dist/types/css/property-descriptors/duration';
 const PaymentForm = () => {
     const navigate=useNavigate();
     const [formData, setFormData] = useState({
@@ -21,10 +23,16 @@ const PaymentForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('process.env.REACT_URI/submitPaymentForm', formData);
-            alert(response.data.message);
-            alert('Your wallet balance will be updated shortly'); // Alert success message
-            // Optionally, clear the form after successful submission
+            const response = await axios.post(`${process.env.REACT_APP_URI}/submitPaymentForm`, formData);
+            if(response.data.success){
+                toast.success(response.data.message , { duration: 15000 });
+                toast.success('Your wallet balance will be updated shortly' , {duration:15000});// Alert success message
+                // Optionally, clear the form after successful submission
+            }
+            else {
+                toast.error(response.data.message , { duration: 15000 })
+            }
+             
             setFormData({
                 userId: '',
                 paymentReference: ''

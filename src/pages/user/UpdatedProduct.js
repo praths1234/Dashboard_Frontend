@@ -14,7 +14,7 @@ const UpdatedProduct = () => {
     console.log('Design ID:', designId); // Log designId to ensure it is not undefined
     const fetchDesign = async () => {
       try {
-        const response = await axios.get(`process.env.REACT_URI/design/${designId}`);
+        const response = await axios.get(`${process.env.REACT_APP_URI}/design/${designId}`);
         console.log('Design data:', response.data);
         setDesign(response.data);
       } catch (error) {
@@ -37,7 +37,7 @@ const UpdatedProduct = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`process.env.REACT_URI/design/${designId}`);
+      await axios.delete(`${process.env.REACT_APP_URI}/design/${designId}`);
       console.log('Design deleted:', designId);
       alert('Design deleted successfully!');
       navigate('/dashboard/user/products');

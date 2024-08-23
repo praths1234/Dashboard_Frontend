@@ -10,7 +10,7 @@ const ProductDetails = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`process.env.REACT_URI/product/${id}`);
+                const response = await axios.get(`${process.env.REACT_APP_URI}/product/${id}`);
                 setProduct(response.data);
             } catch (error) {
                 console.error('Error fetching product:', error);

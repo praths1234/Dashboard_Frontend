@@ -26,7 +26,7 @@ const Customizer = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`process.env.REACT_URI/product/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_URI}/product/${id}`);
         setProduct(response.data);
       } catch (error) {
         console.error(error);
@@ -91,7 +91,7 @@ const Customizer = () => {
     formData.append('price', product.price);
 
     try {
-      const response = await axios.post('process.env.REACT_URI/design', formData, {
+      const response = await axios.post(`${process.env.REACT_APP_URI}/design`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -285,12 +285,7 @@ const Customizer = () => {
                       )}
                     </div>
                   </div>
-                  <div>
-                    <h2>Text Position:</h2>
-                    <pre>{JSON.stringify(textPosition, null, 2)}</pre>
-                    <h2>Image Position:</h2>
-                    <pre>{JSON.stringify(imagePosition, null, 2)}</pre>
-                  </div>
+                  
                 </>
               )}
             </div>

@@ -12,7 +12,7 @@ const Order = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get(`process.env.REACT_URI/orders/user/${userId}`);
+        const response = await axios.get(`${process.env.REACT_APP_URI}/orders/user/${userId}`);
         console.log('Fetched Orders:', response.data);  // Log the fetched orders
         setOrders(response.data);
       } catch (error) {
@@ -28,7 +28,7 @@ const Order = () => {
 
   const handleCancelOrder = async (orderId) => {
     try {
-      const res = await axios.patch(`process.env.REACT_URI/orders/cancel/${orderId}`);
+      const res = await axios.patch(`${process.env.REACT_APP_URI}/orders/cancel/${orderId}`);
       setOrders(orders.filter(order => order._id !== orderId));
       toast.success(res.message , { duration: 50000 })
     } catch (error) {

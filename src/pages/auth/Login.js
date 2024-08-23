@@ -21,12 +21,12 @@ const Login = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const res = await axios.post("process.env.REACT_URI/auth/login", {
+        const res = await axios.post(`${process.env.REACT_APP_URI}/auth/login`, {
           email,
           password,
         });
         if (res && res.data.success) {
-          toast.success(res.data && res.data.message , { duration: 50000 });
+          toast.success(res.data && res.data.message , { duration: 15000 });
           setAuth({
             ...auth,
             user: res.data.user,

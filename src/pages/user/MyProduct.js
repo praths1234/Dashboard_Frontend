@@ -17,7 +17,7 @@ const MyProduct = () => {
     const fetchDesigns = async () => {
       try {
         console.log('Fetching designs for userId:', userId); // Log userId
-        const response = await axios.get(`process.env.REACT_URI/design/user/${userId}`);
+        const response = await axios.get(`${process.env.REACT_APP_URI}/design/user/${userId}`);
         console.log('Response data:', response.data); // Log response data
         setDesigns(response.data);
       } catch (error) {
@@ -33,7 +33,7 @@ const MyProduct = () => {
 
   const handleDelete = async (designId) => {
     try {
-      await axios.delete(`process.env.REACT_URI/design/${designId}`);
+      await axios.delete(`${process.env.REACT_APP_URI}/design/${designId}`);
       setDesigns(designs.filter(design => design._id !== designId));
     } catch (error) {
       console.error('Error deleting design:', error);

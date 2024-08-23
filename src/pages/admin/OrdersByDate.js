@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Layout from '../../components/Layout';
 import AdminMenu from '../../components/AdminMenu';
+import '../../styles/AdminOrder.css'
 
 const OrdersByDateRange = () => {
   const [startDate, setStartDate] = useState('');
@@ -10,7 +11,7 @@ const OrdersByDateRange = () => {
   
   const fetchOrdersByDateRange = async () => {
     try {
-      const response = await axios.post("process.env.REACT_URI/orders/by-date-range", {
+      const response = await axios.post(`${process.env.REACT_APP_URI}/orders/by-date-range`, {
         startDate,
         endDate
       });
@@ -22,7 +23,7 @@ const OrdersByDateRange = () => {
 
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-        await axios.patch(`process.env.REACT_URI/orders/updateStatus/${orderId}`, { status: newStatus });
+        await axios.patch(`${process.env.REACT_APP_URI}/orders/updateStatus/${orderId}`, { status: newStatus });
         setOrders((prevOrders) =>
             prevOrders.map((order) =>
                 order._id === orderId ? { ...order, status: newStatus } : order
@@ -66,25 +67,31 @@ const OrdersByDateRange = () => {
               <ul>
                 {orders.map((order) => (
                   <li key={order._id}>
-                    <p>Name: {order.userEmail}</p>
-                    <p>Order Date: {order.orderDate}</p>
-                    <p>Product: {order.productDetails.name}</p>
-                    <p>Address: {order.shippingAddress}</p>
-                    <p>Status: {order.status}</p>
-                    <div className="order-actions">
+                    <p><strong>Order ID:</strong> {order._id}</p>
+                                    <p><strong>User ID:</strong> {order.userId}</p>
+                                    <p><strong>User Email:</strong> {order.userEmail}</p>
+                                    <p>Product ID: {order.productDetails._id}</p>
+                                    <p><strong>Status: {order.status}</strong></p>
+                                    <div className="order-actions">
                                     {((order.status === 'Cancelled')|| order.status ==='Delivered') ? (
-                                        <p>{order.status}</p>
+                                        <p></p>
                                     ) : (
                                         <select
                                             value={order.status}
                                             onChange={(e) => handleStatusChange(order._id, e.target.value)}
                                         >
+                                            <option value="Pending">Pending</option>
                                             <option value="Processing">Processing</option>
                                             <option value="Shipped">Shipped</option>
                                             <option value="Delivered">Delivered</option>
                                         </select>
                                     )}
                                 </div>
+                    <img 
+                                   src={order.designId ? order.productDetails.customizedImage : order.productDetails.imageUrl} 
+                                    alt="Product" 
+                                    />
+                    
                     <hr />
                   </li>
                 ))}

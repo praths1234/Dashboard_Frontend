@@ -15,7 +15,7 @@ const Payments = () => {
     useEffect(() => {
         const fetchPayments = async () => {
             try {
-                const response = await axios.get('process.env.REACT_URI/submitPaymentForm');
+                const response = await axios.get(`${process.env.REACT_APP_URI}/submitPaymentForm`);
                 setPayments(response.data);
             } catch (error) {
                 console.error('Error fetching payments:', error);
@@ -35,13 +35,14 @@ const Payments = () => {
 
     const handleUpdateBalance = async (amount) => {
         try {
-            const response = await axios.post('process.env.REACT_URI/submitPaymentForm/update-wallet-balance', {
+            const response = await axios.post(`${process.env.REACT_APP_URI}/submitPaymentForm/update-wallet-balance`, {
                 email: currentEmail,
                 amount,
                 paymentId: currentPaymentId
             });
             alert(response.data.message);
             handleCloseModal();
+            window.location.reload();
         } catch (error) {
             console.error('Error updating wallet balance:', error);
             alert('Failed to update wallet balance. Please try again later.');

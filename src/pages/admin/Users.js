@@ -7,7 +7,7 @@ const Users = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("process.env.REACT_URI/auth/all-users");
+        const response = await axios.get(`${process.env.REACT_APP_URI}/auth/all-users`);
         const filteredUsers = response.data.users.filter(user => user.role!==1)
         setUsers(filteredUsers);
       } catch (error) {

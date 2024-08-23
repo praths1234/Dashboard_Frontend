@@ -21,7 +21,7 @@ const Signup =  () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const res = await axios.post("process.env.REACT_URI/auth/register", {
+          const res = await axios.post(`${process.env.REACT_APP_URI}/auth/register`, {
             name,
             email,
             password,

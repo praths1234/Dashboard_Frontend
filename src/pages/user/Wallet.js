@@ -12,7 +12,7 @@ const Wallet = () => {
       // Fetch the wallet balance using the user ID
       const fetchWalletBalance = async () => {
           try {
-              const response = await axios.get(`process.env.REACT_URI/wallet/${userId}`);
+              const response = await axios.get(`${process.env.REACT_APP_URI}/wallet/${userId}`);
               console.log(response.data);
               setWalletBalance(response.data.walletBalance);
               console.log(walletBalance);
