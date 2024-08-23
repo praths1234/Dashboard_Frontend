@@ -211,7 +211,7 @@ const Customizer = () => {
                         position: 'relative',
                         width: '400px',
                         height: '600px',
-                        background: `url(${product.imageUrl}) center center / contain no-repeat`,
+                        background: `url(${product.imageUrl}) center center / contain no-repeat,lightblue`,
                         backgroundColor: color,
                         border: '1px solid #ccc',
                         margin: '0 auto'
@@ -245,6 +245,7 @@ const Customizer = () => {
                               alignItems: 'center',
                               justifyContent: 'center',
                               fontSize: `${fontSize}px`,
+                              color: 'black',
                               transform: `rotate(${textPosition.rotate}deg)`,
                               width: 'auto',
                               height: 'auto',
