@@ -1,35 +1,72 @@
+/* Order Actions */
+.order-actions select {
+  background-color: #007bff; /* Blue background */
+  color: #fff; /* White text color */
+  border: 2px solid #007bff; /* Blue border to match the background */
+  border-radius: 4px; /* Rounded corners */
+  padding: 8px 12px; /* Padding inside the select box */
+  font-size: 16px; /* Larger font size for better readability */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for background and border on hover */
+}
 
- 
-  /* Order List */
+select.form-control {
+  display: inline-block;
+  width: auto;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
 
-  /* Order Actions */
+.order-actions select:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3; /* Darker border on hover */
+}
+
+/* Buttons */
+.btn {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #ee0505;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .order-actions select {
-    background-color: #007bff; /* Blue background */
-    color: #fff; /* White text color */
-    border: 1px solid #007bff; /* Blue border to match the background */
-    border-radius: 4px; /* Rounded corners */
-    padding: 8px 12px; /* Padding inside the select box */
-    font-size: 16px; /* Larger font size for better readability */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for background and border on hover */
+    font-size: 14px; /* Smaller font size for smaller screens */
+    padding: 6px 10px; /* Adjusted padding */
   }
-  
-  .order-actions select:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    border-color: #0056b3; /* Darker border on hover */
-  }
-  
-  /* Buttons */
+
   .btn {
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 8px 16px; /* Adjusted padding for smaller screens */
+    font-size: 14px; /* Smaller font size for buttons */
   }
-  
-  .btn:hover {
-    background-color: #0056b3;
+
+  select.form-control {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 10px; /* Space between form elements */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .order-actions select {
+    font-size: 12px; /* Even smaller font size for very small screens */
+    padding: 5px 8px; /* Adjusted padding for very small screens */
+  }
+
+  .btn {
+    padding: 6px 12px; /* Smaller padding for buttons */
+    font-size: 12px; /* Smaller font size for buttons */
+  }
+
+  select.form-control {
+    padding: 5px 8px; /* Adjusted padding for very small screens */
+  }
+}

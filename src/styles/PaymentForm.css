@@ -1,56 +1,83 @@
-/* Container for the form */
-.form-container {
-  background-color: #f9f9f9; /* Light gray background for the form area */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 20px; /* Padding inside the container */
-  max-width: 800px; /* Max width for better readability */
-  margin: 0 auto; /* Center the container */
+/* PaymentForm container */
+.form-containerr {
+  background-color: #a0cfff; /* Light gray background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 2rem; /* Padding inside the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 1rem; /* Space above the form container */
 }
 
-/* Title of the form */
-.title {
+/* Title styling */
+.titlee {
   font-size: 1.5rem; /* Larger font size for the title */
-  font-weight: 600; /* Bold font */
-  margin-bottom: 20px; /* Space below the title */
-  color: #333; /* Dark color for the title */
+  color: #343a40; /* Dark gray color */
+  margin-bottom: 1.5rem; /* Space below the title */
+  text-align: center; /* Center the title text */
+  font-weight: 600; /* Bold text */
 }
 
-/* Styling for form groups */
-.form-group {
-  margin-bottom: 15px; /* Space between form elements */
+/* Form group styling */
+.form-groupp {
+  margin-bottom: 1.5rem; /* Space between form groups */
 }
 
-/* Styling for labels */
-.form-group label {
-  display: block; /* Labels should be block elements */
-  font-size: 1rem; /* Font size for labels */
-  margin-bottom: 5px; /* Space between label and input */
-  color: #555; /* Slightly lighter color for labels */
+/* Label styling */
+label {
+  display: block; /* Ensure label takes full width */
+  font-size: 1rem; /* Consistent font size */
+  color: #495057; /* Medium gray color */
+  margin-bottom: 0.5rem; /* Space between label and input */
 }
 
-/* Styling for input fields */
-.form-group input {
-  width: 100%; /* Full width for inputs */
-  padding: 10px; /* Padding inside input fields */
-  border: 1px solid #ddd; /* Light border color */
-  border-radius: 4px; /* Rounded corners for inputs */
-  font-size: 1rem; /* Font size for inputs */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+/* Input fields styling */
+input[type="text"] {
+  width: 100%; /* Full width input fields */
+  padding: 0.75rem; /* Padding inside the input */
+  font-size: 1rem; /* Font size for input text */
+  border: 1px solid #ced4da; /* Light gray border */
+  border-radius: 5px; /* Slightly rounded corners */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's width */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
-/* Styling for the submit button */
+input[type="text"]:focus {
+  border-color: #126fcc; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Submit button styling */
 .submit-button {
-  background-color: #007bff; /* Blue background for the button */
-  color: white; /* White text color */
+  background-color: #0471ec; /* Blue background color */
+  color: #ffffff; /* White text color */
+  padding: 0.75rem 1.5rem; /* Padding inside the button */
+  font-size: 1rem; /* Font size for button text */
   border: none; /* Remove default border */
-  padding: 10px 20px; /* Padding inside the button */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 1rem; /* Font size for the button */
+  border-radius: 5px; /* Slightly rounded corners */
+  padding: 0.5rem;
+  margin-bottom: 1rem; /* Adds space between list items */
+  margin-right: 0.5rem; /* Adds horizontal space between list items */
   cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  display: block; /* Block-level button for full width */
+  width: 100%; /* Full width button */
+  text-align: center; /* Center the button text */
 }
 
 .submit-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #f80e0e; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1.5rem; /* Reduce padding on smaller screens */
+  }
+
+  .title {
+    font-size: 1.25rem; /* Slightly smaller title on smaller screens */
+  }
+
+  .submit-button {
+    font-size: 0.9rem; /* Slightly smaller button text on smaller screens */
+  }
 }

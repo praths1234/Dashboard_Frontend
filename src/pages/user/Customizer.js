@@ -7,7 +7,7 @@ import * as html2canvas from 'html2canvas';
 import 'react-quill/dist/quill.snow.css';
 import Layout from '../../components/Layout';
 import UserMenu from '../../components/UserMenu';
-
+import '../../styles/CustomizerPage.css';
 const Customizer = () => {
   const { id } = useParams();
   const navigate = useNavigate();

@@ -1,12 +1,27 @@
 /* General body styling */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: black;
-    line-height: 1.6;
-    background-color: #6e6464;
-  }
-  
- 
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: black;
+  line-height: 1.6;
+  background-color: #6e6464;
+  /* Add padding to the body for better spacing on smaller screens */
+  padding: 0 15px; /* Adds horizontal padding */
+}
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+      font-size: 16px; /* Adjust font size for tablets */
+      line-height: 1.5; /* Adjust line height for better readability on tablets */
+      padding: 0 10px; /* Reduce horizontal padding for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+      font-size: 14px; /* Further reduce font size for mobile devices */
+      line-height: 1.4; /* Adjust line height for mobile readability */
+      padding: 0 5px; /* Further reduce horizontal padding for mobile devices */
+  }
+}

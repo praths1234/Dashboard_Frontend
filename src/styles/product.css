@@ -1,8 +1,9 @@
+/* General Product Styles */
 .product {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 16px;
-    width: 200px;
+    width: 200px; /* Set a default width */
     text-align: left;
     position: relative;
     overflow: hidden;
@@ -63,4 +64,55 @@
     padding: 5px;
     border-radius: 5px;
     font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .product {
+        width: 150px; /* Adjust width for tablets and smaller screens */
+        padding: 12px;
+    }
+
+    .option-button {
+        padding: 8px 16px;
+    }
+
+    .badge {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        width: 100%; /* Full width for mobile screens */
+        max-width: 300px; /* Limit maximum width */
+        margin: 0 auto; /* Center align */
+        padding: 10px;
+    }
+
+    .option-button {
+        padding: 8px 14px;
+    }
+
+    .badge {
+        font-size: 10px;
+        padding: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%; /* Full width for very small screens */
+        padding: 8px;
+    }
+
+    .option-button {
+        padding: 6px 12px;
+    }
+
+    .badge {
+        font-size: 8px;
+        padding: 2px;
+    }
 }

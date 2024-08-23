@@ -1,3 +1,4 @@
+/* General Styles for Payment Details */
 .payment-details {
     max-width: 800px;
     margin: 0 auto;
@@ -10,6 +11,7 @@
     gap: 20px;
 }
 
+/* Payment Item Styling */
 .payment-item {
     border: 1px solid #ccc;
     padding: 15px;
@@ -33,4 +35,33 @@
 
 .payment-item button:hover {
     background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-list {
+        grid-template-columns: 1fr; /* Stack payment items in a single column */
+    }
+
+    .payment-item {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .payment-item button {
+        padding: 8px 15px; /* Slightly larger button for better touch interaction */
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-details {
+        padding: 15px; /* Adjust padding for mobile screens */
+    }
+
+    .payment-item {
+        padding: 8px; /* Reduce padding further on mobile screens */
+    }
+
+    .payment-item button {
+        padding: 6px 12px; /* Smaller button padding for mobile screens */
+    }
 }

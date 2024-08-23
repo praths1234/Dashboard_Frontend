@@ -74,13 +74,15 @@ const MyProduct = () => {
               <h2>My Customized Products</h2>
               <div>
                 {designs.length === 0 ? (
-                  <div>
+                  <div className='designButton'>
                     <p>No designs found.</p>
                     <button onClick={handleCreateDesign}>Create Design</button>
                   </div>
                 ) : (
                   <ul>
+                    <div className='designButton'>
                     <button onClick={handleCreateDesign}>Create More Design</button>
+                    </div>
                     {designs.map((design) => (
                       <li key={design._id}>
                         <h3>Product ID: {design.productId}</h3>

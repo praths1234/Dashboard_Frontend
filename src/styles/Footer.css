@@ -1,14 +1,49 @@
+/* ===================================
+========= Footer  */
+
 .footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    padding: 20px; /* Add padding for better spacing */
+    background-color: #f8f9fa; /* Light background color */
+    text-align: center; /* Center-align text for smaller screens */
 }
 
 .footer a {
-    transition: color 0.3s ease;
+    color: #000; /* Default link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+    display: inline-block; /* Ensure scaling doesn’t break layout */
+    margin: 0 10px; /* Add margin between links */
 }
 
 .footer a:hover {
-    color: #07dbfc !important; 
-    transform: scale(1.05);
+    color: #07dbfc !important; /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px; /* Reduce padding for tablets */
+        text-align: center; /* Ensure the text is centered */
+    }
+
+    .footer a {
+        font-size: 14px; /* Reduce font size for tablets */
+        margin: 0 5px; /* Reduce space between links */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 10px; /* Further reduce padding for mobile devices */
+    }
+
+    .footer a {
+        display: block; /* Stack links vertically on mobile */
+        margin: 5px 0; /* Add vertical margin between links */
+        font-size: 12px; /* Smaller font size for mobile */
+    }
 }

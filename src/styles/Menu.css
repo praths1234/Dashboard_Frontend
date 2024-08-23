@@ -1,61 +1,85 @@
 /* Container for the menu */
 .text-center {
-    text-align: center;
-    padding: 1rem;
-    background-color: black;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* List group styling */
-  .list-group {
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Header styling */
-  .list-group h4 {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #343a40;
-  }
-  
-  /* Individual list items */
-  .list-group-item {
-    padding: 0.75rem 1.25rem;
-    border: 1px solid #007bff;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-    background-color: #312f2f;
+  text-align: center;
+  padding: 1rem;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add responsive padding */
+  padding: 1rem 0.5rem; /* Adjust padding for smaller screens */
+}
 
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 1rem;
-    color: #495057;
+/* List group styling */
+.list-group {
+  padding: 0;
+  margin: 0;
+}
+
+/* Header styling */
+.list-group h4 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #343a40;
+}
+
+/* Individual list items */
+.list-group-item {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background-color: #312f2f;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1rem;
+  color: #495057;
+}
+
+/* Active link styling */
+.list-group-item.active {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+/* Link styling */
+.list-group-item-action {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Hover effect for links */
+.list-group-item:hover {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
+/* Focus state for links */
+.list-group-item:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .list-group h4 {
+      font-size: 1.1rem; /* Adjust font size for tablets */
   }
-  
-  /* Active link styling */
-  .list-group-item.active {
-    background-color: #007bff;
-    color: #ffffff;
-    border-color: #007bff;
+  .list-group-item {
+      font-size: 0.9rem; /* Adjust font size for tablets */
+      padding: 0.5rem 1rem; /* Adjust padding for tablets */
   }
-  
-  /* Link styling */
-  .list-group-item-action {
-    text-decoration: none;
-    color: inherit;
+}
+
+@media (max-width: 480px) {
+  .list-group h4 {
+      font-size: 1rem; /* Further reduce font size for mobile devices */
   }
-  
-  /* Hover effect for links */
-  .list-group-item:hover {
-    background-color: #e9ecef;
-    color: #007bff;
+  .list-group-item {
+      font-size: 0.8rem; /* Further reduce font size for mobile devices */
+      padding: 0.5rem; /* Adjust padding for mobile devices */
   }
-  
-  /* Focus state for links */
-  .list-group-item:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+  .text-center {
+      padding: 0.5rem 0.25rem; /* Adjust padding for mobile devices */
   }
-  
+}

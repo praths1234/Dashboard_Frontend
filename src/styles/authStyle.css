@@ -1,53 +1,95 @@
 /* ===================================
-========= register page  */
+========= Register Page  */
+
 .form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh;
-    flex-direction: column;
-    background-color: #ffdee9;
-    background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  flex-direction: column;
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  padding: 20px; /* Ensure there's some padding for smaller screens */
+}
+
+.form-container form {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  background-color: #fff;
+  max-width: 100%;
+  width: 400px; /* Set a maximum width for larger screens */
+  margin: 0 auto; /* Center form on smaller screens */
+}
+
+.form-container form .title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  font-size: 24px; /* Larger font size for larger screens */
+}
+
+.form-container form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+  font-size: 16px;
+}
+
+.form-container form button {
+  border: 1px solid black;
+  border-radius: 0;
+  background-color: #000;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container form button:hover {
+  border: 1px solid black;
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 10px; /* Reduce padding for smaller screens */
   }
-  
+
   .form-container form {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 20px;
-    background-color: #fff;
+    width: 100%; /* Full width on tablets and smaller screens */
   }
-  
+
   .form-container form .title {
-    text-align: center;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-family: "Playfair Display", serif;
+    font-size: 20px; /* Slightly smaller font size for tablets */
   }
-  
-  .form-container form input {
-    border: none;
-    border-bottom: 1px solid #000;
-    border-radius: 0;
-  }
-  
+
+  .form-container form input,
   .form-container form button {
-    border: 1px solid black;
-    border-radius: 0;
-    background-color: #000;
-    color: white;
-    width: 250px;
+    font-size: 14px; /* Slightly smaller input and button size */
   }
-  
-  .form-container form button:hover {
-    border: 1px solid black;
-    background: #000000; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #434343,
-      #000000
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #434343,
-      #000000
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 5px; /* Further reduce padding for mobile devices */
   }
+
+  .form-container form .title {
+    font-size: 18px; /* Smaller font size for mobile devices */
+  }
+
+  .form-container form input,
+  .form-container form button {
+    font-size: 12px; /* Smaller input and button size for mobile */
+    padding: 8px;
+  }
+}

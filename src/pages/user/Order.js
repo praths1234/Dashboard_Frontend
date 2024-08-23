@@ -3,6 +3,8 @@ import axios from 'axios';
 import Layout from '../../components/Layout';
 import UserMenu from '../../components/UserMenu';
 import toast from "react-hot-toast";
+import '../../styles/UserOrder.css'; 
+
 const Order = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -30,13 +32,12 @@ const Order = () => {
     try {
       const res = await axios.patch(`${process.env.REACT_APP_URI}/orders/cancel/${orderId}`);
       setOrders(orders.filter(order => order._id !== orderId));
-      toast.success(res.message , { duration: 50000 })
+      toast.success(res.message, { duration: 5000 });
     } catch (error) {
       console.error('Error cancelling order:', error);
       setError('Error cancelling order. Please try again.');
     }
   };
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -49,41 +50,40 @@ const Order = () => {
 
   return (
     <Layout title={"Dashboard - Your Orders"}>
-    <div className="container-fluid m-3 p-3">
-      <div className="row">
-        <div className="col-md-3">
-          <UserMenu />
+      <div className="container-fluid m-3 p-3">
+        <div className="row">
+          <div className="col-md-3">
+            <UserMenu />
+          </div>
+          <div className="col-md-9">
+            <div className="order-list-container">
+              <h2>My Orders</h2>
+              <div>
+                {activeOrders.length === 0 ? (
+                  <p>No orders found.</p>
+                ) : (
+                  <ul>
+                    {activeOrders.map((order) => (
+                      <li key={order._id}>
+                        <h3>Product ID: {order.productDetails._id}</h3>
+                        <p>Status: {order.status}</p>
+                        <p>Order Date: {new Date(order.orderDate).toLocaleDateString()}</p>
+                        <p>Quantity: {order.quantity}</p>
+                        <img 
+                          src={order.designId ? order.productDetails.customizedImage : order.productDetails.imageUrl} 
+                          alt="Product" 
+                        />
+                        <button onClick={() => handleCancelOrder(order._id)}>Cancel Order</button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="col-md-9">
-        <div>
-      <h2>My Orders</h2>
-      <div>
-        {activeOrders.length === 0 ? (
-          <p>No orders found.</p>
-        ) : (
-          <ul>
-            {activeOrders.map((order) => (
-              <li key={order._id}>
-                <h3>Product ID: {order.productDetails._id}</h3>
-                <p>Status: {order.status}</p>
-                <p>Order Date: {new Date(order.orderDate).toLocaleDateString()}</p>
-                <p>Quantity: {order.quantity}</p>
-                <img 
-                  src={order.designId ? order.productDetails.customizedImage : order.productDetails.imageUrl} 
-                  alt="Product" 
-                />
-                
-                <button onClick={() => handleCancelOrder(order._id)}>Cancel Order</button>
-              </li>
-            ))}
-          </ul>
-        )}
       </div>
-    </div>
-        </div>
-      </div>
-    </div>
-  </Layout>
+    </Layout>
   );
 };
 

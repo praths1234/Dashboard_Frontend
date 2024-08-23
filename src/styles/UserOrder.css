@@ -1,0 +1,92 @@
+/* Container for the order list */
+.order-list-container {
+    background-color: black; /* Light background color */
+    padding: 2rem; /* Padding inside the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Title of the order list */
+  .order-list-container h2 {
+    font-size: 1.8rem; /* Slightly larger font for the title */
+    color: #007efc; 
+    margin-bottom: 1.5rem; /* Space below the title */
+    text-align: center; /* Center the title */
+    font-weight: bold; /* Make the title bold */
+  }
+  
+  /* Each order item */
+  .order-list-container ul {
+    list-style-type: none; /* Remove bullets from the list */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .order-list-container li {
+    background-color: #252424; 
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 1.5rem; /* Padding inside each order item */
+    margin-bottom: 1.5rem; /* Space between order items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Order details */
+  .order-list-container h3 {
+    font-size: 1.2rem; /* Font size for the product ID */
+    color: #c0dbf7; 
+    margin-bottom: 1rem; /* Space below the product ID */
+  }
+  
+  .order-list-container p {
+    font-size: 1rem; /* Font size for the order details */
+    color: #fafcfd; /* Medium gray color for text */
+    margin: 0.5rem 0; /* Space around paragraphs */
+  }
+  
+  /* Product image styling */
+  .order-list-container img {
+    width: 100%; /* Full width image */
+    max-width: 300px; /* Maximum width for images */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Block-level element */
+    margin: 1rem 0; /* Space around the image */
+    border-radius: 8px; /* Rounded corners for the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Cancel button styling */
+  .order-list-container button {
+    background-color: #054497; /* Red background color */
+    color: #ffffff; /* White text color */
+    padding: 0.75rem 1.5rem; /* Padding inside the button */
+    font-size: 1rem; /* Font size for button text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .order-list-container button:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .order-list-container {
+      padding: 1rem; /* Reduce padding on smaller screens */
+    }
+  
+    .order-list-container h2 {
+      font-size: 1.5rem; /* Slightly smaller title on smaller screens */
+    }
+  
+    .order-list-container li {
+      padding: 1rem; /* Reduce padding for order items on smaller screens */
+    }
+  
+    .order-list-container button {
+      width: 100%; /* Full width button on smaller screens */
+      font-size: 0.9rem; /* Slightly smaller button text */
+    }
+  }
+  

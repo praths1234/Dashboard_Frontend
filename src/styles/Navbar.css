@@ -21,7 +21,7 @@
 }
 
 .nav-link:hover {
-  color: #f8f9fa !important; /* Light color on hover */
+  color: #015cb8 !important; /* Light color on hover */
 }
 
 /* Navbar dropdown */
@@ -35,7 +35,7 @@
 }
 
 .dropdown-item:hover {
-  background-color: #495057; /* Darker background on hover */
+  background-color: #126fcc; /* Darker background on hover */
   color: #ffffff; /* Ensures text remains white */
 }
 
@@ -47,7 +47,7 @@
 /* Dropdown toggle button */
 .nav-link.dropdown-toggle {
   color: #ffffff !important; /* White color for dropdown toggle button */
-  padding: 0.5rem 1rem; /* Adds padding around the text */
+  padding: 0.5rem 0.5rem; /* Adds padding around the text */
 }
 
 .nav-link.dropdown-toggle:hover {
@@ -63,4 +63,21 @@
   .nav-item {
     margin-bottom: 0.5rem; /* Adds space between items on small screens */
   }
+}
+
+/* List items styling */
+li {
+  border: 1px solid #126fcc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 1rem; /* Adds space between list items */
+  margin-right: 0.5rem; /* Adds horizontal space between list items */
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Ensures list items are inline in the navbar */
+}
+
+/* Remove margin from the last list item to prevent extra space */
+li:last-child {
+  margin-right: 0;
 }

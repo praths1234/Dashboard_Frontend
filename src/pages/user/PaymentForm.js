@@ -51,10 +51,10 @@ const PaymentForm = () => {
                         <UserMenu />
                     </div>
                     <div className="col-md-9">
-                        <div className="form-container">
-                            <h4 className="title">Payment Form</h4>
+                        <div className="form-containerr">
+                            <h4 className="titlee">Payment Form</h4>
                             <form onSubmit={handleSubmit}>
-                                <div className="form-group">
+                                <div className="form-groupp">
                                     <label htmlFor="userEmail">User Email:</label>
                                     <input
                                         type="text"
